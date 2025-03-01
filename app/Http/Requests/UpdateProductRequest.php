@@ -11,7 +11,7 @@ class UpdateProductRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,8 @@ class UpdateProductRequest extends FormRequest
     {
         return [
             //
+            'name'=> 'required|string|max:250',
+            'description' => 'required|string'
         ];
     }
 }
